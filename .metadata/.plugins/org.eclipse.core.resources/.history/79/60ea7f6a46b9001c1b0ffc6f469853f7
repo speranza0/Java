@@ -1,0 +1,20 @@
+/*
+ * Boxing, UnBoxing
+ * Boxing(박싱)은 원시타입을 참조타입으로 변환시키는 것, UnBoxing(언박싱)은 참조타입을 원시타입으로 변환시키는 것.
+ * 
+ * 특징
+ * 1. 원시타입은 null을 담을수 있지만, 참조 타입은 가능하다.
+ * 2. 아직은 안배웠지만 제너릭 타입에서 사용이 가능하다.
+ * 
+ * 
+ * */
+public class Exam_05 {
+	public static void main(String[] args) {
+		int a = 1;
+		Integer b = 1;
+		
+		System.out.println(a);
+		System.out.println(b);
+		
+	}
+}

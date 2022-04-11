@@ -1,0 +1,15 @@
+/*
+ * 참조형 타입
+ * String 타입
+ * 문자열을 담는 참조자료형
+ * 
+ * 클래스
+ * 
+ * */
+public class Exam_04 {
+	public static void main(String[] args) {
+		String a = "abc";
+		
+		System.out.println(a);
+	}
+}
