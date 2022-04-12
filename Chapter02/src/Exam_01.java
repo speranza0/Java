@@ -14,7 +14,7 @@
  * byte 정수 -128 ~ 127 1byte
  * short 정수 -32768 ~ 32767 2byte
  * int 정수 -2147483648 ~ 2147483647 4byte (정수의 기본형)
- * long 8byte
+ * long 정수 8byte
  * float 실수 4byte
  * double 실수 8byte (실수의 기본형)
  * 
