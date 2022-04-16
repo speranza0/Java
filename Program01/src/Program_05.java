@@ -29,6 +29,7 @@ public class Program_05 {
 		BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 		
 		int num;
+		String clap = "박수짝";
 		
 		// 입력
 		do {
@@ -36,15 +37,19 @@ public class Program_05 {
 			num = Integer.parseInt(in.readLine());
 		} while(num <= 0 || num >= 100);
 		
-		// 처리
-		
-		for(int i = 0; i < num; i++) {
-			System.out.println((i+1));
-			if((i+1) % 3 == 0) {
-				System.out.println("박수짝짝");
+		// 처리 및 출력
+		for(int i = 1; i < num+1; i++) {
+			if(i/10 == 3 || i/10 == 6 || i/10 == 9) {
+				if(i%10 == 3 || i%10 == 6 || i%10 == 9) {
+					System.out.println(clap + "짝");
+				} else {
+				System.out.println(clap);
+				}
+			} else if(i%10 == 3 || i%10 == 6 || i%10 == 9) {
+				System.out.println(clap);
+			} else {
+				System.out.println(i);
 			}
 		}
-		
-		// 출력
 	}
 }

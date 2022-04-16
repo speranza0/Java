@@ -49,7 +49,7 @@ public class Program_04 {
 		} while(num3 <= 0);
 		
 		// 처리
-		// 가장 긴 변 찾기
+		// 가장 긴 변 찾고 순서정렬
 		if(num1 > num2 && num1 > num3) {
 			max = num1;
 			mid = num2 > num3 ? num2 : num3;
