@@ -3,6 +3,7 @@ package employee;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 /*
  * 메뉴를 출력하거나 화면에 관련된 처리를 담당하는 클래스
@@ -82,15 +83,15 @@ public class EmployeeController {
 					System.out.println("알바 = " + dto.getpartTimeCount());
 					System.out.println("전체 직원 급여 = " + dto.getSalarySum());
 				} else if(searchMenu == 2) {
-					Employee[] empList = service.selectAllEmployee();
+					List<Employee> empList = service.selectAllEmployee();
 					System.out.println("[전체 조회]");
 					System.out.println("사번\t이름\t고용형태\t급여");
-					for(int i = 0; i < empList.length; i++) {
-						if(empList[i] != null) {
-							System.out.print(empList[i].getIdx() + "\t");
-							System.out.print(empList[i].getName() + "\t");
-							System.out.print(empList[i].getEmployeeType() + "\t");
-							System.out.println(empList[i].getSalary());
+					for(int i = 0; i < empList.size(); i++) {
+						if(empList.get(i) != null) {
+							System.out.print(empList.get(i) .getIdx() + "\t");
+							System.out.print(empList.get(i) .getName() + "\t");
+							System.out.print(empList.get(i) .getEmployeeType() + "\t\t");
+							System.out.println(empList.get(i) .getSalary());
 						}
 					}
 				} else if(searchMenu == 3) {
@@ -141,7 +142,7 @@ public class EmployeeController {
 						int salary = Integer.parseInt(in.readLine());
 						
 						service.updateEmployee(updateIdx, newName, salary);
-						System.out.println(newName + "직원이 등록되었습니다.");
+						System.out.println(newName + "직원이 수정되었습니다.");
 					} else if(updateMenu == 2) {
 						System.out.print("기본급 = ");
 						int salary = Integer.parseInt(in.readLine());
@@ -178,7 +179,7 @@ public class EmployeeController {
 					System.out.println("사번에 해당하는 직원이 없습니다.");
 				} else {
 					service.removeEmployee(removeIdx);
-					System.out.println(removeEmployee.getName() + "직원이 삭제되었습니다.");
+					System.out.println(((Employee) removeEmployee).getName() + "직원이 삭제되었습니다.");
 				}
 				break;
 			case 5 :

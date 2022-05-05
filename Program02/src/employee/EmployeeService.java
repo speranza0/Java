@@ -1,6 +1,9 @@
 package employee;
+
+import java.util.List;
+
 /*
- * 사원 저장소의 연결통리인 Repository를 통해 데이터를 주고 받아 처리를 담당하는 클래스
+ * 사원 저장소의 연결통로인 Repository를 통해 데이터를 주고 받아 처리를 담당하는 클래스
  * 
  * */
 public class EmployeeService {
@@ -41,7 +44,7 @@ public class EmployeeService {
 		return dto;
 	}
 	
-	public Employee[] selectAllEmployee() {
+	public List<Employee> selectAllEmployee() {
 		return repository.selectAll();
 	}
 	
