@@ -20,7 +20,7 @@ public class Student {
 		this.eng = eng;
 		this.math = math;
 		this.sum = kor + eng + math;
-		this.avg = sum / 3.0f; 
+		this.avg = sum / 3.0f;
 	}
 
 	// 멤버 메서드

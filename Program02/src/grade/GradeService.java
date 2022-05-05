@@ -3,6 +3,8 @@ package grade;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * 비지니스 로직
@@ -13,7 +15,8 @@ import java.io.InputStreamReader;
 public class GradeService {
 	// 멤버 필드
 	// 객체 배열
-	Student[] studentList;
+	// Student[] studentList;
+	List<Student> studentList;
 	
 	// 학생의 ID값 자동증가 하게끔(인덱스) = 학번
 	int studentIdx;
@@ -27,7 +30,7 @@ public class GradeService {
 	
 	// 생성자 메서드
 	public GradeService() {
-		studentList = new Student[100];
+		studentList = new ArrayList<Student>();
 		studentIdx = 0;
 	}
 	
@@ -69,7 +72,7 @@ public class GradeService {
 		Student student = new Student(studentIdx+1, name, kor, eng, math);
 		
 		// 객체를 객체배열에 담는다.
-		studentList[studentIdx] = student;
+		studentList.add(student);
 		
 		// 인덱스 값을 증가시킨다.
 		studentIdx++;
@@ -82,15 +85,15 @@ public class GradeService {
 	public void showAllStudent() {
 		System.out.println("\n==== 전체 성적 조회 ====");
 		System.out.println("학번\t이름\t국어\t영어\t수학\t총점\t평균");
-		
 		for(int i = 0; i < studentIdx; i++) {
-			System.out.print(studentList[i].getIdx() + "\t");
-			System.out.print(studentList[i].getName() + "\t");
-			System.out.print(studentList[i].getKor() + "\t");
-			System.out.print(studentList[i].getEng() + "\t");
-			System.out.print(studentList[i].getMath() + "\t");
-			System.out.print(studentList[i].getSum() + "\t");
-			System.out.printf("%.2f", studentList[i].getAvg());
+			Student student = studentList.get(i);
+			System.out.print(student.getIdx() + "\t");
+			System.out.print(student.getName() + "\t");
+			System.out.print(student.getKor() + "\t");
+			System.out.print(student.getEng() + "\t");
+			System.out.print(student.getMath() + "\t");
+			System.out.print(student.getSum() + "\t");
+			System.out.printf("%.2f", student.getAvg());
 			System.out.print("\n");
 		}
 	}
