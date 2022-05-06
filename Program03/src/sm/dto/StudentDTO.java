@@ -4,17 +4,23 @@ public class StudentDTO {
 	private int studentNum;
 	private String studentName;
 	private int studentClass;
-	private int studentBirth;
+	private String studentBirth;
+	private int studentAge;
 	private ScoreDTO score;
 	
 	public StudentDTO() {
 		
 	}
 	
-	public StudentDTO(String studentName, int studentClass, int studentBirth) {
+	public StudentDTO(String studentName, int studentClass, String studentBirth) {
 		this.studentName = studentName;
 		this.studentClass = studentClass;
 		this.studentBirth = studentBirth;
+	}
+
+	public StudentDTO(int studentNum, String studentName) {
+		this.studentNum = studentNum;
+		this.studentName = studentName;
 	}
 
 	public int getStudentNum() {
@@ -25,11 +31,11 @@ public class StudentDTO {
 		this.studentNum = studentNum;
 	}
 
-	public String getName() {
+	public String getStudentName() {
 		return studentName;
 	}
 
-	public void setName(String studentName) {
+	public void setStudentName(String studentName) {
 		this.studentName = studentName;
 	}
 
@@ -41,15 +47,23 @@ public class StudentDTO {
 		this.studentClass = studentClass;
 	}
 
-	public int getBirth() {
+	public String getStudentBirth() {
 		return studentBirth;
 	}
 
-	public void setBirth(int studentBirth) {
+	public void setStudentBirth(String studentBirth) {
 		this.studentBirth = studentBirth;
 	}
 	
 	
+	public int getStudentAge() {
+		return studentAge;
+	}
+
+	public void setStudentAge(int studentAge) {
+		this.studentAge = studentAge;
+	}
+
 	public ScoreDTO getScore() {
 		return score;
 	}
@@ -61,7 +75,7 @@ public class StudentDTO {
 	@Override
 	public String toString() {
 		return "StudentDTO [studentNum=" + studentNum + ", studentName=" + studentName + ", studentClass="
-				+ studentClass + ", studentBirth=" + studentBirth + "]";
+				+ studentClass + ", studentBirth=" + studentBirth + ", studentAge=" + studentAge + "]";
 	}
 	
 	
