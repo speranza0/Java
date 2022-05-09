@@ -1,29 +1,22 @@
 package sm.dto;
 
-public class ScoreDTO extends StudentDTO{
+public class ScoreDTO {
 	private int kor;
 	private int math;
 	private int eng;
 	private int sum;
 	private float avg;
 	
-	public ScoreDTO(int studentNum, String studentName, int kor, int math, int eng) {
-		super(studentNum, studentName);
-		this.kor = kor;
-		this.math = math;
-		this.eng = eng;
-		this.sum = kor + math + eng;
-		this.avg = sum / 3.00f;
-	}
+	public ScoreDTO() {}
 	
 	public ScoreDTO(int kor, int math, int eng) {
 		this.kor = kor;
 		this.math = math;
 		this.eng = eng;
 		this.sum = kor + math + eng;
-		this.avg = sum / 3.00f;
+		this.avg = sum / 3.0f;
 	}
-	
+
 	public int getKor() {
 		return kor;
 	}

@@ -1,5 +1,8 @@
 package sm.dto;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
 public class StudentDTO {
 	private int studentNum;
 	private String studentName;
@@ -8,19 +11,10 @@ public class StudentDTO {
 	private int studentAge;
 	private ScoreDTO score;
 	
-	public StudentDTO() {
-		
-	}
-	
 	public StudentDTO(String studentName, int studentClass, String studentBirth) {
 		this.studentName = studentName;
 		this.studentClass = studentClass;
 		this.studentBirth = studentBirth;
-	}
-
-	public StudentDTO(int studentNum, String studentName) {
-		this.studentNum = studentNum;
-		this.studentName = studentName;
 	}
 
 	public int getStudentNum() {
@@ -72,10 +66,13 @@ public class StudentDTO {
 		this.score = score;
 	}
 
-	@Override
-	public String toString() {
-		return "StudentDTO [studentNum=" + studentNum + ", studentName=" + studentName + ", studentClass="
-				+ studentClass + ", studentBirth=" + studentBirth + ", studentAge=" + studentAge + "]";
+	public String calStudentAge() {
+		// 나이 계산해서 생성
+		LocalDate date = LocalDate.now();
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyyMMdd");
+		LocalDate dateTime = LocalDate.parse(studentBirth, dtf);
+		int studentAge = date.compareTo(dateTime);
+		return String.valueOf(studentAge);
 	}
 	
 	
