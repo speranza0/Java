@@ -7,7 +7,8 @@ public class AccountController {
 		AccountService service = new AccountService();
 		
 		int menu = 0;
-		while(true) {
+		boolean isStop = false;
+		while(!isStop) {
 			service.showMenu();
 			System.out.print("선택 = ");
 			menu = Integer.parseInt(AccountService.in.readLine());
@@ -27,11 +28,13 @@ public class AccountController {
 				break;
 			case 5:
 				System.out.println("프로그램을 종료합니다.");
+				isStop = true;
 				break;
 			default:
 				System.out.println("선택이 올바르지 않습니다.");
 				break;
 			}
 		}
+		System.out.println("종료");
 	}
 }
