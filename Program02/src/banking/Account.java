@@ -1,6 +1,7 @@
 package banking;
 
 public class Account {
+	private int idx;
 	private String accountNum;
 	private int balance;
 	private String name;
@@ -10,7 +11,19 @@ public class Account {
 		this.balance = balance;
 		this.name = name;
 	}
+	public Account(int idx, String accountNum, int balance, String name) {
+		this.idx = idx;
+		this.accountNum = accountNum;
+		this.balance = balance;
+		this.name = name;
+	}
 
+	public int getIdx() {
+		return idx;
+	}
+	public void setIdx(int idx) {
+		this.idx = idx;
+	}
 	public String getAccountNum() {
 		return accountNum;
 	}
