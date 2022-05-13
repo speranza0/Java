@@ -146,7 +146,7 @@ public class ScoreController {
 		} else if(removeScoreStudent.getScore() == null) {
 			System.out.println("등록된 성적이 없습니다.");
 		} else {
-			System.out.print(removeScoreStudent.getStudentName() + "(" + removeScoreStudent.getStudentNum() + ") 성적 정보를 삭제하시겠습니까 (Y,N) =");
+			System.out.print(removeScoreStudent.getStudentName() + "(" + removeScoreStudent.getStudentNum() + ") 성적 정보를 삭제하시겠습니까 (Y,N) = ");
 			String yesorno = in.readLine();
 			if(yesorno.equals("Y")) {
 				service.removeScore(removeScoreStudent.getStudentNum());

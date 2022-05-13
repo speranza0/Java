@@ -138,7 +138,7 @@ public class StudentController {
 		if(remove.getStudentNum() != removeNum) {
 			System.out.println("학번이 올바르지 않습니다.");
 		} else {
-			System.out.print(remove.getStudentName() + "(" + remove.getStudentNum() + ") 정보를 삭제하시겠습니까 (Y,N) =");
+			System.out.print(remove.getStudentName() + "(" + remove.getStudentNum() + ") 정보를 삭제하시겠습니까 (Y,N) = ");
 			String yesorno = in.readLine();
 			if("Y".equals(yesorno)) {
 				service.removeOneStudent(removeNum);

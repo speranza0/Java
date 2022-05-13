@@ -47,7 +47,7 @@ public class StudentRepository {
 	// 학생 검색
 	public StudentDTO selectOne(int idx) {
 		for(int i = 0; i < studentList.size(); i++) {
-			if(studentList.get(i) != null && studentList.get(i).getStudentNum() == idx) {
+			if(studentList.get(i).getStudentNum() == idx) {
 				return studentList.get(i);
 			}
 		}
@@ -57,7 +57,7 @@ public class StudentRepository {
 	// 학생 수정
 	public void updateOne(int studentNum, StudentDTO emp) {
 		for(int i = 0; i < studentList.size(); i++) {
-			if(studentList.get(i) != null && studentList.get(i).getStudentNum() == studentNum) {
+			if(studentList.get(i).getStudentNum() == studentNum) {
 				emp.setStudentNum(studentNum);
 				studentList.remove(i);
 				studentList.add(emp);;
@@ -69,7 +69,7 @@ public class StudentRepository {
 	// 학생 삭제
 	public void removeOne(int idx) {
 		for(int i = 0; i < studentList.size(); i++) {
-			if(studentList.get(i) != null && studentList.get(i).getStudentNum() == idx) {
+			if(studentList.get(i).getStudentNum() == idx) {
 				studentList.remove(i);
 			}
 		}
