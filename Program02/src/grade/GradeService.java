@@ -3,7 +3,6 @@ package grade;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
 
 /*
@@ -15,11 +14,11 @@ import java.util.List;
 public class GradeService {
 	// 멤버 필드
 	// 객체 배열
-	// Student[] studentList;
+	GradeRepository gradeRepository = new GradeRepository();
 	List<Student> studentList;
 	
 	// 학생의 ID값 자동증가 하게끔(인덱스) = 학번
-	int studentIdx;
+	// int studentIdx;
 	
 	// 입력을 위한 객체
 	static BufferedReader in;
@@ -29,10 +28,12 @@ public class GradeService {
 	}
 	
 	// 생성자 메서드
+	/*
 	public GradeService() {
 		studentList = new ArrayList<Student>();
 		studentIdx = 0;
 	}
+	*/
 	
 	// 멤버 메서드
 	// 메뉴를 관리하는 메서드
@@ -69,13 +70,13 @@ public class GradeService {
 		} while(math < 0 || math > 100);
 		
 		// 입력받은 값들을 이용하여 객체를 생성
-		Student student = new Student(studentIdx+1, name, kor, eng, math);
+		Student student = new Student(name, kor, eng, math);
 		
 		// 객체를 객체배열에 담는다.
-		studentList.add(student);
-		
+		// studentList.add(student);
+		gradeRepository.createOne(student);
 		// 인덱스 값을 증가시킨다.
-		studentIdx++;
+		// studentIdx++;
 		
 		// 학생 등록 완료 메시지
 		System.out.println(name + " 학생 성적이 등록되었습니다.");
@@ -85,7 +86,10 @@ public class GradeService {
 	public void showAllStudent() {
 		System.out.println("\n==== 전체 성적 조회 ====");
 		System.out.println("학번\t이름\t국어\t영어\t수학\t총점\t평균");
-		for(int i = 0; i < studentIdx; i++) {
+		
+		List<Student> studentList = gradeRepository.selectAll();
+		
+		for(int i = 0; i < studentList.size(); i++) {
 			Student student = studentList.get(i);
 			System.out.print(student.getIdx() + "\t");
 			System.out.print(student.getName() + "\t");
