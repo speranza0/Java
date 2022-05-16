@@ -22,8 +22,8 @@ public class JdbcUtils {
 		}
 	}
 	// DB 작업에 필요한 Connection 객체를 생성해주는 메서드
-	public static Connection getConnection() {
-		String url = "jdbc:mariadb://127.0.0.1:3306/bank";
+	public static Connection getConnection(String database) {
+		String url = "jdbc:mariadb://127.0.0.1:3306/" + database;
 		String user = "root";
 		String password = "1234";
 		

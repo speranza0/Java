@@ -17,7 +17,7 @@ public class AccountRepository {
 	Connection conn;
 	
 	public AccountRepository() {
-		conn = JdbcUtils.getConnection();
+		conn = JdbcUtils.getConnection("bank");
 	}
 	
 	public void createOne(Account account) {
